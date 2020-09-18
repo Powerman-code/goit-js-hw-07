@@ -10,3 +10,36 @@
 
 // Категория: Животные
 // Количество элементов: 4
+
+const ulItemRef = document.querySelectorAll("#categories");
+// console.log(ulItemRef[1].textContent);
+console.log(typeof ulItemRef);
+// console.log(ulItemRef.querySelectorAll("li"));
+
+let count = function (array) {
+  return array.forEach((element) => {
+    // console.log(element.length);
+    // console.log(element.querySelector("h2"));
+    console.log(element.querySelectorAll("h2"));
+    element.querySelectorAll("h2").forEach((cathegory) => {
+      console.log(cathegory);
+      // console.log(cathegory.textContent);
+    });
+
+    element.querySelectorAll("ul").forEach((cathegoryElement) => {
+      // console.log(typeof cathegoryElement);
+      // console.log(Object.keys(cathegoryElement).length);
+      console.log(cathegoryElement.length);
+      // return element;
+    });
+
+    // тут мы получаем UL массив, и можем применить на него ленгс.
+    // element.querySelectorAll("ul").forEach((cathegoryElement) => {
+
+    console.log(element.querySelectorAll("ul").length);
+  });
+};
+
+// ulItemRef.forEach((el) => console.log(el));
+
+console.log(count(ulItemRef));
