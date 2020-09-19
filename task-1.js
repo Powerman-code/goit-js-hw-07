@@ -13,48 +13,71 @@
 
 const ulItemRef = document.querySelectorAll("#categories");
 // console.log(ulItemRef[1].textContent);
-console.log(typeof ulItemRef);
+// console.log(typeof ulItemRef);
 // console.log(ulItemRef.querySelectorAll("li"));
 
 let count = function (array) {
-  return array.forEach((element) => {
-    // console.log(element.length);
-    // console.log(element.querySelector("h2"));
-    let searchedCategory = "";
-    let searchedQuantity = 0;
-    console.log(element.querySelectorAll("h2"));
-    element.querySelectorAll("h2").forEach((cathegory) => {
-      console.log(cathegory);
-      // console.log(cathegory.textContent);
-      searchedCategory = cathegory.textContent;
-      console.log(searchedCategory);
-      return searchedCategory;
+  let searchedCategory = "";
+  let searchedQuantity = 0;
+  array.forEach((element) => {
+    // console.log(element);
+    element.querySelectorAll(".item").forEach((item) => {
+      // console.log(item);
+      item.querySelectorAll("h2").forEach((cathegory) => {
+        // console.log(cathegory);
+        searchedCategory = cathegory.textContent;
+        // return searchedCategory;
+      });
+
+      item.querySelectorAll("ul").forEach((ulElement) => {
+        // console.log(ulElement.children.length);
+        searchedQuantity = ulElement.children.length;
+        // console.log(searchedQuantity);
+        // return searchedQuantity;
+      });
+      console.log(
+        `Категория: ${searchedCategory}
+        Количество элементов: ${searchedQuantity}`
+      );
+      // return `Категория: ${searchedCategory} Количество элементов: ${searchedQuantity}`;
     });
-
-    // element.querySelectorAll("ul").forEach((cathegoryElement) => {
-    //   // console.log(typeof cathegoryElement);
-    //   // console.log(Object.keys(cathegoryElement).length);
-    //   console.log(cathegoryElement.length);
-    //   // return element;
-    // });
-
-    // тут мы получаем UL массив, и можем применить на него ленгс.
-    // element.querySelectorAll("ul").forEach((cathegoryElement) => {
-
-    console.log(element.querySelectorAll(".item ul"));
-
-    element.querySelectorAll(".item ul").forEach((ulElement) => {
-      console.log(ulElement.children.length);
-      searchedQuantity = ulElement.children.length;
-      console.log(searchedQuantity);
-      return searchedQuantity;
-    });
-    console.log(`Категория: ${searchedCategory}
-                    Количество элементов: ${searchedQuantity}`);
-    return `Категория: ${searchedCategory}
-                    Количество элементов: ${searchedQuantity}`;
   });
 };
 // ulItemRef.forEach((el) => console.log(el));
 
 console.log(count(ulItemRef));
+
+//  // console.log(element.length);
+//     // console.log(element.querySelector("h2"));
+//     // console.log(element.querySelectorAll("h2"));
+//     element.querySelectorAll("h2").forEach((cathegory) => {
+//       console.log(cathegory);
+//       // console.log(cathegory.textContent);
+//       searchedCategory = cathegory.textContent;
+//       // element.querySelectorAll(".item ul").forEach((ulElement) => {
+//       //   console.log(ulElement.children.length);
+//       // });
+//       console.log(searchedCategory);
+//       // return searchedCategory;
+//     });
+
+//     // element.querySelectorAll("ul").forEach((cathegoryElement) => {
+//     //   // console.log(typeof cathegoryElement);
+//     //   // console.log(Object.keys(cathegoryElement).length);
+//     //   console.log(cathegoryElement.length);
+//     //   // return element;
+//     // });
+
+//     // тут мы получаем UL массив, и можем применить на него ленгс.
+//     // element.querySelectorAll("ul").forEach((cathegoryElement) => {
+
+//     // console.log(element.querySelectorAll(".item ul"));
+
+//     element.querySelectorAll(".item ul").forEach((ulElement) => {
+//       console.log(ulElement.children.length);
+//       searchedQuantity = ulElement.children.length;
+//       console.log(searchedQuantity);
+//       return searchedQuantity;
+//     });
+//     // console.log(`Категория: ${searchedCategory}
+//     //                 Количество элементов: ${searchedQuantity}`);
