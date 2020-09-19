@@ -36,8 +36,7 @@ let count = function (array) {
         // return searchedQuantity;
       });
       console.log(
-        `Категория: ${searchedCategory}
-        Количество элементов: ${searchedQuantity}`
+        `Категория: ${searchedCategory} \n\Количество элементов: ${searchedQuantity}`
       );
       // return `Категория: ${searchedCategory} Количество элементов: ${searchedQuantity}`;
     });
