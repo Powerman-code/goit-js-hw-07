@@ -1,17 +1,33 @@
-Задание 2
-В HTML есть пустой список ul#ingredients.
+// Задание 2
+// В HTML есть пустой список ul#ingredients.
 
-<ul id="ingredients"></ul>
-В JS есть массив строк.
+// <ul id="ingredients"></ul>
+// В JS есть массив строк.
 
+// Напиши скрипт, который для каждого элемента массива ingredients создаст отдельный li,
+//     после чего вставит все li за одну операцию в список ul.ingredients.
+// Для создания DOM - узлов используй document.createElement().
+
+const listOfIngredients = document.querySelector("ul");
+// console.log(listOfIngredients);
 const ingredients = [
-  'Картошка',
-  'Грибы',
-  'Чеснок',
-  'Помидоры',
-  'Зелень',
-  'Приправы',
+  "Картошка",
+  "Грибы",
+  "Чеснок",
+  "Помидоры",
+  "Зелень",
+  "Приправы",
 ];
-Напиши скрипт, который для каждого элемента массива ingredients создаст отдельный li, после чего вставит все li за одну операцию в список ul.ingredients. Для создания DOM-узлов используй document.createElement().
 
-Задание 3
+const addingIngridientsToList = function (array) {
+  //   console.log(array);
+  array.forEach((element) => {
+    let listItem = document.createElement("li");
+    listItem.textContent = element;
+    console.log(listItem);
+    listOfIngredients.append(listItem);
+  });
+  console.log;
+};
+
+console.log(addingIngridientsToList(ingredients));
