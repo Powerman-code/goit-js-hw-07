@@ -1,0 +1,14 @@
+.ul {
+  display: flex;
+}
+
+.list-element {
+  display: block;
+  list-style: none;
+}
+
+.list-image {
+  display: block;
+  max-width: 640px;
+  margin-bottom: 20px;
+}

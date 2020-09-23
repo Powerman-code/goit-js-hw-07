@@ -9,7 +9,7 @@
 // Для создания DOM - узлов используй document.createElement().
 
 const listOfIngredients = document.querySelector("ul");
-// console.log(listOfIngredients);
+console.log(listOfIngredients);
 const ingredients = [
   "Картошка",
   "Грибы",
@@ -19,15 +19,36 @@ const ingredients = [
   "Приправы",
 ];
 
+// let ingredientsItems = [];
+
 const addingIngridientsToList = function (array) {
-  //   console.log(array);
-  array.forEach((element) => {
-    let listItem = document.createElement("li");
-    listItem.textContent = element;
-    console.log(listItem);
-    listOfIngredients.append(listItem);
+  // 1) вариант
+
+  // // console.log(array);
+  // array.forEach((element) => {
+  //   let liElements = document.createElement("li");
+  //   liElements.textContent = element;
+  //   // console.log(liElements);
+  //   ingredientsItems.push(liElements);
+  //   console.log(liElements);
+  //   console.log(ingredientsItems);
+  //   // console.log((document.createElement("li").textContent = element));
+  //   // listOfIngredients.append(listItem);
+  //   // return ingr;
+  // });
+  // listOfIngredients.append(...ingredientsItems);
+  // // console.log(ingredientsItems);
+
+  // 2 вариант)
+
+  let ingredientsItems = array.map((element) => {
+    const liItem = document.createElement("li");
+    liItem.textContent = element;
+    return liItem;
   });
-  console.log;
+  listOfIngredients.append(...ingredientsItems);
+  // console.log(typeof ingredientsItems);
+  // console.log(ingredientsItems);
 };
 
 console.log(addingIngridientsToList(ingredients));
