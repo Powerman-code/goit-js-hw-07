@@ -25,33 +25,58 @@ const ourBoxes = document.querySelector("#boxes");
 const input = document.querySelector("input");
 const createBtn = document.querySelector('button[data-action="render"]');
 const clearBtn = document.querySelector('button[data-action="destroy"]');
-let amount = 0;
+var fragment = document.createDocumentFragment();
+// let amount = 0;
+
+let createdBoxes = [];
+
+const inputValue = input.value;
+console.log(inputValue);
 // = input.value;
 
-const onInputСhange = function () {
-  return (amount = input.value);
-};
-console.log(amount);
+// const onInputСhange = function () {
+//   return (amount = input.value);
+// };
+// console.dir(amount.currentTarget);
 
-input.addEventListener("input", onInputСhange);
+// input.addEventListener("input", onInputСhange);
 
-console.log(input.value);
-console.log(input);
+console.dir(input.textContent);
+
 const createBoxes = function (amount) {
+  // event.preventDefault;
   console.log("Создаю магию");
-  // for (let i = 0; i <= amount; i++) {
-  //   ourBoxes.
-  // }
-  const newCreatedBoxes = amount.forEach((element) => {
-    return document.createElement("div");
-  });
-  console.log(newCreatedBoxes);
+  console.dir(input);
+  console.log(input.value);
+  for (let i = 0; i <= amount - 1; i++) {
+    createdBoxes = document.createElement("div");
+    createdBoxes.width = 30 + "px";
+    createdBoxes.height = 30 + "px";
+    console.dir(createdBoxes);
+  }
+  //   const newCreatedBoxes = amount.forEach((element) => {
+  //     return document.createElement("div");
+  //   });
+  //   console.log(newCreatedBoxes);
 };
 
 const destroyBoxes = function () {
   console.log("Удаляю магию");
 };
 
-createBtn.addEventListener("click", createBoxes);
-console.log(input.value);
+createBtn.addEventListener("click", () => createBoxes(input.value));
+console.log();
 clearBtn.addEventListener("click", destroyBoxes);
+
+// console.log(createBoxes(4));
+
+// хотим вставить в список UL много LI
+
+// делаем вспомогательный DocumentFragment
+// var fragment = document.createDocumentFragment();
+
+// for (цикл по li) {
+//   fragment.appendChild(list[i]); // вставить каждый LI в DocumentFragment
+// }
+
+// ul.appendChild(fragment); // вместо фрагмента вставятся элементы списка
