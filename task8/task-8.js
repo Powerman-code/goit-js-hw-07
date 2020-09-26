@@ -27,7 +27,7 @@ const createBtn = document.querySelector('button[data-action="render"]');
 const clearBtn = document.querySelector('button[data-action="destroy"]');
 // var fragment = document.createDocumentFragment();
 
-let createdBoxes = [];
+let allBoxes = [];
 
 const inputValue = input.value;
 console.log(inputValue);
@@ -43,17 +43,22 @@ const createBoxes = function (amount) {
     dirBox.width = 30 + i * 10 + "px";
     dirBox.height = 30 + i * 10 + "px";
     // console.dir(createdBoxes);
-    createdBoxes.push(dirBox);
+    allBoxes.push(dirBox);
   }
-  ourBoxes.append(...createdBoxes);
-  console.dir(createdBoxes);
-  console.log(typeof createdBoxes);
+  ourBoxes.append(...allBoxes);
+  console.dir(allBoxes);
+  console.log(allBoxes);
 };
+// ourBoxes.append(...allBoxes);
 console.log(ourBoxes);
 console.dir(ourBoxes);
 
 const destroyBoxes = function () {
   console.log("Удаляю боксы");
+  ourBoxes.innerHTML = "";
+  input.value = "";
+  console.log(ourBoxes);
+  console.dir(ourBoxes);
 };
 
 createBtn.addEventListener("click", () => createBoxes(input.value));
