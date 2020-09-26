@@ -25,43 +25,35 @@ const ourBoxes = document.querySelector("#boxes");
 const input = document.querySelector("input");
 const createBtn = document.querySelector('button[data-action="render"]');
 const clearBtn = document.querySelector('button[data-action="destroy"]');
-var fragment = document.createDocumentFragment();
-// let amount = 0;
+// var fragment = document.createDocumentFragment();
 
 let createdBoxes = [];
 
 const inputValue = input.value;
 console.log(inputValue);
-// = input.value;
-
-// const onInputСhange = function () {
-//   return (amount = input.value);
-// };
-// console.dir(amount.currentTarget);
-
-// input.addEventListener("input", onInputСhange);
-
 console.dir(input.textContent);
 
 const createBoxes = function (amount) {
   // event.preventDefault;
-  console.log("Создаю магию");
+  console.log("Создаю боксы");
   console.dir(input);
   console.log(input.value);
   for (let i = 0; i <= amount - 1; i++) {
-    createdBoxes = document.createElement("div");
-    createdBoxes.width = 30 + "px";
-    createdBoxes.height = 30 + "px";
-    console.dir(createdBoxes);
+    let dirBox = document.createElement("div");
+    dirBox.width = 30 + i * 10 + "px";
+    dirBox.height = 30 + i * 10 + "px";
+    // console.dir(createdBoxes);
+    createdBoxes.push(dirBox);
   }
-  //   const newCreatedBoxes = amount.forEach((element) => {
-  //     return document.createElement("div");
-  //   });
-  //   console.log(newCreatedBoxes);
+  ourBoxes.append(...createdBoxes);
+  console.dir(createdBoxes);
+  console.log(typeof createdBoxes);
 };
+console.log(ourBoxes);
+console.dir(ourBoxes);
 
 const destroyBoxes = function () {
-  console.log("Удаляю магию");
+  console.log("Удаляю боксы");
 };
 
 createBtn.addEventListener("click", () => createBoxes(input.value));
@@ -80,3 +72,16 @@ clearBtn.addEventListener("click", destroyBoxes);
 // }
 
 // ul.appendChild(fragment); // вместо фрагмента вставятся элементы списка
+
+// const createBoxes = function (amount) {
+//   // event.preventDefault;
+//   console.log("Создаю магию");
+//   console.dir(input);
+//   console.log(input.value);
+//   for (let i = 0; i <= amount - 1; i++) {
+//     createdBoxes = document.createElement("div");
+//     createdBoxes.width = 30 + "px";
+//     createdBoxes.height = 30 + "px";
+//     console.dir(createdBoxes);
+//   }
+// };
